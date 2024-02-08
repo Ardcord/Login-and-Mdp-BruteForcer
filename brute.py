@@ -1,6 +1,7 @@
 import requests
 from termcolor import colored
 import sys
+import os
 
 # Clear the terminal
 
@@ -15,7 +16,7 @@ print("██████╔╝██████╔╝██║   ██║   �
 print("██╔══██╗██╔══██╗██║   ██║   ██║   ██╔══╝            ██║     ██║   ██║██║   ██║")
 print("██████╔╝██║  ██║╚██████╔╝   ██║   ███████╗ ███████╗ ███████╗╚██████╔╝╚██████╔╝")
 print("╚═════╝ ╚═╝  ╚═╝ ╚═════╝    ╚═╝   ╚══════╝ ╚══════╝ ╚══════╝ ╚═════╝  ╚═════╝ ")
-print("                                                                              ") 
+print("                                                                              ")
 print("██████████████████████████████████████████████████████████████████████████████")
 print("")              
 
@@ -26,25 +27,39 @@ def clear_line():
 
 
 # Configuration
-url = "https://0a9d0076039882c28003e99300000057.web-security-academy.net/login"
-cookie_value = "session=zB4HwgkE4UaDadvw0HKM0LKDqlO1bQoP"
-password_file = "passlist.txt"
-userfile = "userlist.txt"
-login_failed_string = "Invalid username"
-password_failed_string = "Incorrect password"
     
-# url = input('[+] Enter the URL to bruteforce (e.g., https://exemple.net/login): ')
-# clear_line()
-# cookie_value = input('Enter the cookie value (Optional): ')
-# clear_line()
-# userfile = input('[+] Enter the path to the username list file (e.g., userlist.txt): ')
-# clear_line()
-# password_file = input('[+] Enter the path to the password list file (e.g., passlist.txt): ')
-# clear_line()
-# login_failed_string = input('[+] Enter the string that occurs when login fails: ')
-# clear_line()
-# password_failed_string = input('[+] Enter the string that occurs when password fails: ')
-# clear_line()
+# mute the folowing lines to use the input method
+    
+# url = "https://0a9d0076039882c28003e99300000057.web-security-academy.net/login"
+# cookie_value = "session=zB4HwgkE4UaDadvw0HKM0LKDqlO1bQoP"
+# password_file = "passlist.txt"
+# userfile = "userlist.txt"
+# login_failed_string = "Invalid username"
+# password_failed_string = "Incorrect password"
+
+
+# Uncomment the following lines to use the input method
+
+url = input('[+] Enter the URL to bruteforce (e.g., https://exemple.net/login): ')
+clear_line()
+cookie_value = input('[!] Optional, Enter the cookie value (e.g., session=sey0Y4LvAwbG10j9XftiF4faK2zel82y): ')
+clear_line()
+userfile = input('[+] Enter the path to the username list file (e.g., userlist.txt): ')
+clear_line()
+password_file = input('[+] Enter the path to the password list file (e.g., passlist.txt): ')
+clear_line()
+login_failed_string = input('[+] Enter the string that occurs when login fails (e.g., Invalid username): ')
+clear_line()
+password_failed_string = input('[+] Enter the string that occurs when password fails (e.g., Invalid password): ')
+clear_line()
+
+# Vérifier si le fichier existe avant de l'ouvrir
+if not os.path.exists(userfile):
+    print("Le fichier \"" + userfile + "\" n'existe pas.")
+    exit()
+elif not os.path.exists(password_file):
+    print("Le fichier \"" + password_file + "\" n'existe pas.")
+    exit()
 
 
 # Print a reminder of the configuration
