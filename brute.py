@@ -30,7 +30,7 @@ def clear_line():
     
 # mute the folowing lines to use the input method
     
-# url = "https://0a9d0076039882c28003e99300000057.web-security-academy.net/login"
+# url = "https://exemple-academy.net/login"
 # cookie_value = "session=zB4HwgkE4UaDadvw0HKM0LKDqlO1bQoP"
 # password_file = "passlist.txt"
 # userfile = "userlist.txt"
