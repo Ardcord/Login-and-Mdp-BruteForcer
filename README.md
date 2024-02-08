@@ -22,7 +22,7 @@ Assurez-vous de configurer les paramètres :
 ## Utilisation
 
 1. Assurez-vous d'avoir Python installé sur votre système.
-2. Exécutez le programme en exécutant `python3 brute_force.py` dans votre terminal.
+2. Exécutez le programme en exécutant `python3 brute.py` dans votre terminal.
 
 ## Avertissement
 
